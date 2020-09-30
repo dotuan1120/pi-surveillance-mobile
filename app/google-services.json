@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "408628332478",
+    "firebase_url": "https://pi-surveillance-9dc05.firebaseio.com",
+    "project_id": "pi-surveillance-9dc05",
+    "storage_bucket": "pi-surveillance-9dc05.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:408628332478:android:57f6b2f461e834b76d9bef",
+        "android_client_info": {
+          "package_name": "com.example.pisurveillance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "408628332478-tkp38fl2uusd5ovq6b10lfbcbetelo5v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGH5CfMSpv9cS2S2K0mYtKZzDdYEqtyLs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "408628332478-tkp38fl2uusd5ovq6b10lfbcbetelo5v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
