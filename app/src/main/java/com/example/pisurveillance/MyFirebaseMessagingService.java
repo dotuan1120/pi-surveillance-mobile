@@ -21,24 +21,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     @Override
     public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
-        /**
 
-         String notificationTitle = null, notificationBody = null;
+        // Handle FCM messages here.
 
-         // Check if message contains a notification payload
-         if (remoteMessage.getNotification() != null) {
-         Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
-         notificationTitle = remoteMessage.getNotification().getTitle();
-         notificationBody = remoteMessage.getNotification().getBody();
-         }
-
-         // If you want to fire a local notification (that notification on the top of the phone screen)
-         // you should fire it from here
-         sendLocalNotification(notificationTitle, notificationBody);
-         // ...
-         **/
-        // TODO(developer): Handle FCM messages here.
-        // Not getting messages here? See why this may be: https://goo.gl/39bRNJ
         Log.d(TAG, "From: " + remoteMessage.getFrom());
         String notificationTitle = null, notificationBody = null;
         // Check if message contains a data payload.
@@ -53,8 +38,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             notificationBody = remoteMessage.getNotification().getBody();
         }
 
-        // Also if you intend on generating your own notifications as a result of a received FCM
-        // message, here is where that should be initiated. See sendNotification method below.
+        // Display the notifications
         sendLocalNotification(notificationTitle, notificationBody);
     }
 
@@ -63,8 +47,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent,
                 PendingIntent.FLAG_ONE_SHOT);
-
-        Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             NotificationChannel channel =
@@ -79,8 +61,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 .setSmallIcon(R.drawable.ic_chat) //Notification icon
                 .setContentIntent(pendingIntent)
                 .setContentTitle(notificationTitle)
-                .setContentText(notificationBody)
-                .setSound(defaultSoundUri);
+                .setContentText(notificationBody);
 
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 

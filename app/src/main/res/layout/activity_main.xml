@@ -9,28 +9,13 @@
     tools:context=".MainActivity">
 
 
-    <VideoView
-        android:layout_width="match_parent"
-        android:layout_height="230dp"
-        android:id="@+id/videoview_main"
-        android:backgroundTint="@android:color/black"/>
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="23dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:clickable="true"
-        android:text="Time " />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show all videos "
-        android:clickable="true"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="300dp"
+        android:text="Pi Surveillance "
+        android:textSize="50dp"
         />
 
 </LinearLayout>
